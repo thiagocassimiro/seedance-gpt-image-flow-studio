@@ -24,7 +24,7 @@ from .project import (
     utc_now,
     write_versioned_json,
 )
-from .security import redact_text, validate_https_url, validate_official_asset_url, validate_task_id
+from .security import redact_text, validate_https_url, validate_image_data_url, validate_official_asset_url, validate_task_id
 
 Transport = Callable[[str, str, dict[str, str], dict[str, Any] | None, float], Any]
 DownloadTransport = Callable[[str], bytes]
@@ -86,7 +86,10 @@ def _asset(kind: str, url: str, role: str, config: dict[str, Any], field: str) -
         raise ValidationError(f"tipo de asset inválido em {field}: {kind}")
     if not role.strip():
         raise ValidationError(f"role vazio em {field}")
-    validate_official_asset_url(url, config["safety"]["allowed_asset_host_suffixes"], field)
+    if kind == "image_url" and url.startswith("data:image/"):
+        validate_image_data_url(url, field)
+    else:
+        validate_official_asset_url(url, config["safety"]["allowed_asset_host_suffixes"], field)
     return {"type": kind, kind: {"url": url}, "role": role}
 
 

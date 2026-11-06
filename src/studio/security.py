@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import base64
+import binascii
 import os
 import re
 from typing import Any
@@ -19,6 +21,10 @@ _SENSITIVE_PARTS = (
     "signature",
     "credential",
 )
+_USAGE_COUNT_KEYS = {
+    "completion_tokens", "total_tokens", "input_tokens", "output_tokens", "prompt_tokens",
+    "cached_tokens", "cache_creation_input_tokens", "cache_read_input_tokens",
+}
 
 
 def _secret_values() -> list[str]:
@@ -58,7 +64,9 @@ def redact_data(value: Any) -> Any:
         result = {}
         for key, item in value.items():
             normalized = re.sub(r"[-\s]", "_", str(key).lower())
-            if any(part in normalized for part in _SENSITIVE_PARTS) or normalized.startswith("x_tos_"):
+            if normalized in _USAGE_COUNT_KEYS:
+                result[str(key)] = item
+            elif any(part in normalized for part in _SENSITIVE_PARTS) or normalized.startswith("x_tos_"):
                 result[str(key)] = "<redacted>"
             else:
                 result[str(key)] = redact_data(item)
@@ -66,6 +74,8 @@ def redact_data(value: Any) -> Any:
     if isinstance(value, (list, tuple)):
         return [redact_data(item) for item in value]
     if isinstance(value, str):
+        if value.startswith("data:image/"):
+            return "<data-url-redacted>"
         redacted = redact_text(value)
         if redacted.startswith(("https://", "http://")):
             return redact_url(redacted)
@@ -89,6 +99,19 @@ def validate_official_asset_url(value: str, suffixes: list[str], field: str = "a
         raise ValidationError(
             f"{field} usa host não autorizado; configure somente hospedagem oficial BytePlus: {hostname or 'desconhecido'}"
         )
+
+
+def validate_image_data_url(value: str, field: str = "image", max_bytes: int = 10 * 1024 * 1024) -> None:
+    """Valida data URL documentado pela API, sem registrar o conteúdo."""
+    match = re.fullmatch(r"data:image/(png|jpeg|jpg|webp);base64,([A-Za-z0-9+/]+={0,2})", value)
+    if not match:
+        raise ValidationError(f"{field} precisa ser data:image/<png|jpeg|jpg|webp>;base64,<dados> em minúsculas")
+    try:
+        decoded = base64.b64decode(match.group(2), validate=True)
+    except (binascii.Error, ValueError) as exc:
+        raise ValidationError(f"{field} contém Base64 inválido") from exc
+    if not decoded or len(decoded) > max_bytes:
+        raise ValidationError(f"{field} está vazio ou excede {max_bytes} bytes")
 
 
 def validate_task_id(value: str) -> str:
