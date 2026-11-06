@@ -1,0 +1,76 @@
+ai-video-studio/  (diretório local; repositório: seedance-gpt-image-flow-studio)
+├── .gitignore
+├── .gitattributes
+├── AGENTS.md
+├── README.md
+├── SECURITY.md
+├── CONTRIBUTING.md
+├── pyproject.toml
+├── .github/
+│   ├── workflows/offline-tests.yml
+│   ├── PULL_REQUEST_TEMPLATE.md
+│   └── ISSUE_TEMPLATE/bug_report.yml
+├── config/
+│   ├── models.example.json
+│   └── pricing.example.json
+├── docs/
+│   ├── VALIDATION.md
+│   ├── piloto-5s.md
+│   ├── production-checklist.md
+│   ├── tree.txt
+│   └── validation/
+│       ├── preflight-summary.json
+│       ├── dry-run-summary.json
+│       ├── image-dry-run-summary.json
+│       ├── estimate-summary.json
+│       └── qc-summary.json
+├── prompts/
+│   ├── director.md
+│   ├── story_reviewer.md
+│   ├── frame_reviewer.md
+│   ├── supervisor.md
+│   └── final_reviewer.md
+├── scripts/
+│   ├── __init__.py
+│   └── check_publication.py
+├── src/studio/
+│   ├── __init__.py
+│   ├── __main__.py
+│   ├── cli.py
+│   ├── preflight.py
+│   ├── project.py
+│   ├── images.py
+│   ├── frames.py
+│   ├── seedance.py
+│   ├── costs.py
+│   ├── approvals.py
+│   ├── qc.py
+│   ├── assemble.py
+│   ├── security.py
+│   └── errors.py
+├── tests/
+│   ├── __init__.py
+│   ├── helpers.py
+│   ├── test_project.py
+│   ├── test_frames_images.py
+│   ├── test_approvals.py
+│   ├── test_idempotency_recovery.py
+│   ├── test_payload.py
+│   ├── test_costs.py
+│   ├── test_cli_offline.py
+│   ├── test_assemble_qc.py
+│   ├── test_safety_regressions.py
+│   ├── test_additional_safety.py
+│   ├── test_final_blockers.py
+│   └── test_publication.py
+└── projects/  (conteúdo de filmes ignorado por padrão)
+    ├── .gitkeep
+    ├── README.md
+    └── studio-selfcheck/  (somente fixture local, não versionada)
+        ├── manifest.json
+        ├── shots/SHOT-001.json
+        ├── frames/SHOT-001/
+        ├── estimates/SHOT-001/
+        ├── reports/
+        ├── history/
+        └── demais diretórios operacionais do workflow

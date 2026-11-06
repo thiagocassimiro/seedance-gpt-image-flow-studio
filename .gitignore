@@ -1,0 +1,37 @@
+# Credenciais e materiais privados
+.env
+.env.*
+*.pem
+*.key
+
+# Python local
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# Testes, caches e processos
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+tests/.tmp/
+*.tmp
+*.partial
+*.lock
+*.log
+
+# Projetos de filmes são locais por padrão.
+# Manifestos e tasks podem conter URLs assinadas; não usar git add -f.
+projects/*
+!projects/.gitkeep
+!projects/README.md
+
+# Mídia pesada eventual fora de projects/
+*.mp4
+*.mkv
+*.mov
+*.avi

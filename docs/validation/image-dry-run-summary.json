@@ -1,0 +1,15 @@
+{
+  "executed": false,
+  "network_request_sent": false,
+  "command": [
+    "gpt-image",
+    "--model", "gpt-image-2.5-flare",
+    "-p", "A cinematic ceramic cup on a wooden table",
+    "-f", "<project-path>/images/draft-v1.png",
+    "--quality", "low",
+    "--size", "landscape",
+    "-n", "1",
+    "--format", "png"
+  ],
+  "count": 1
+}

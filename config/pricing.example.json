@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "currency": "UNKNOWN",
+  "retrieved_at": null,
+  "source": {
+    "name": "BytePlus ModelArk pricing",
+    "url": "https://docs.byteplus.com/en/docs/modelark/model-pricing",
+    "note": "Preços não confirmados nesta execução. null significa desconhecido, nunca gratuito. Preencher com data, moeda e fonte oficial antes da aprovação."
+  },
+  "video_models": {
+    "dreamina-seedance-2-0-mini-260615": {
+      "resolutions": {
+        "720p": {
+          "price_per_second": null,
+          "currency": null,
+          "effective_date": null,
+          "retrieved_at": null,
+          "source_url": null
+        }
+      }
+    },
+    "dreamina-seedance-2-0-fast-260128": {
+      "resolutions": {
+        "720p": {
+          "price_per_second": null,
+          "currency": null,
+          "effective_date": null,
+          "retrieved_at": null,
+          "source_url": null
+        }
+      }
+    },
+    "dreamina-seedance-2-5-260628": {
+      "resolutions": {
+        "720p": {
+          "price_per_second": null,
+          "currency": null,
+          "effective_date": null,
+          "retrieved_at": null,
+          "source_url": null
+        }
+      }
+    }
+  },
+  "image_models": {
+    "gpt-image-2.5-flare": {
+      "qualities": {
+        "low": {
+          "price_per_image": null,
+          "currency": null,
+          "effective_date": null,
+          "retrieved_at": null,
+          "source_url": null
+        }
+      }
+    },
+    "gpt-image-2.5-sunburst": {
+      "qualities": {
+        "low": {
+          "price_per_image": null,
+          "currency": null,
+          "effective_date": null,
+          "retrieved_at": null,
+          "source_url": null
+        }
+      }
+    }
+  }
+}

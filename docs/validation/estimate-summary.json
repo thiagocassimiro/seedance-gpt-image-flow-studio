@@ -1,0 +1,16 @@
+{
+  "known": false,
+  "currency": null,
+  "video": {
+    "model": "dreamina-seedance-2-0-mini-260615",
+    "resolution": "720p",
+    "duration_seconds": 5,
+    "attempts": 1,
+    "quantity": 1,
+    "billable_seconds": "5",
+    "price_per_second": null,
+    "amount": null
+  },
+  "images": {"calls": [], "amount": "0", "note": "Nenhuma chamada incluída; não significa imagem gratuita."},
+  "total_amount": null
+}

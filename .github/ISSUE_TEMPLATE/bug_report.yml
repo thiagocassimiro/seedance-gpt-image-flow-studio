@@ -1,0 +1,35 @@
+name: Relatar problema
+description: Relate um defeito sem credenciais ou materiais privados.
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Não inclua chaves, tokens, URLs assinadas, arquivos de `projects/`, dados de clientes ou logs privados.**
+  - type: textarea
+    id: description
+    attributes:
+      label: O que aconteceu?
+      description: Descreva o comportamento observado e o esperado.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Como reproduzir offline
+      description: Use somente comandos, transportes e arquivos fictícios. Não execute operações pagas.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Ambiente
+      description: Versão do Python, Windows, FFmpeg e commit. Não inclua variáveis de ambiente.
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Confirmação
+      options:
+        - label: Removi credenciais, URLs assinadas e dados privados deste relato.
+          required: true

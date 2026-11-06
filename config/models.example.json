@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "provider": "byteplus_modelark",
+  "region": "ap-southeast",
+  "endpoint_base": "https://ark.ap-southeast.bytepluses.com",
+  "tasks_path": "/api/v3/contents/generations/tasks",
+  "credential_env": "ARK_API_KEY",
+  "documentation": {
+    "create_task": "https://docs.byteplus.com/en/docs/modelark/create-video-generation-task-api",
+    "seedance_2_0": "https://docs.byteplus.com/en/docs/modelark/seedance-2-0",
+    "seedance_2_5": "https://docs.byteplus.com/en/docs/modelark/seedance-2-5",
+    "models_api": "https://docs.byteplus.com/en/docs/modelark/models-api",
+    "note": "A documentação pública foi localizada, mas seu conteúdo dinâmico não confirmou todos os parâmetros nesta execução. Validar a configuração da conta antes de pagamentos."
+  },
+  "account_discovery": {
+    "status": "not_run",
+    "checked_at": null,
+    "available_model_ids": [],
+    "note": "Nenhuma consulta autenticada à conta foi feita nesta etapa. Não inferir disponibilidade dos exemplos."
+  },
+  "safety": {
+    "allow_paid_submissions": false,
+    "allow_parallel_paid": false,
+    "send_idempotency_header": false,
+    "allowed_asset_host_suffixes": [
+      "bytepluses.com",
+      "volces.com"
+    ]
+  },
+  "models": {
+    "dreamina-seedance-2-0-mini-260615": {
+      "id": "dreamina-seedance-2-0-mini-260615",
+      "family": "seedance-2.0",
+      "tier": "economic",
+      "preferred_for_pilot": true,
+      "availability": "unverified_account",
+      "enabled_for_submission": false,
+      "supported_durations": null,
+      "supported_resolutions": null,
+      "source": {
+        "type": "user_provided_sample",
+        "name": "seedance-2.0-mini-sample.txt",
+        "official_tutorial": "https://docs.byteplus.com/en/docs/modelark/seedance-2-0"
+      }
+    },
+    "dreamina-seedance-2-0-fast-260128": {
+      "id": "dreamina-seedance-2-0-fast-260128",
+      "family": "seedance-2.0",
+      "tier": "economic",
+      "preferred_for_pilot": false,
+      "availability": "unverified_account",
+      "enabled_for_submission": false,
+      "supported_durations": null,
+      "supported_resolutions": null,
+      "source": {
+        "type": "user_provided_sample",
+        "name": "seedance-2.0-fast-sample.txt",
+        "official_tutorial": "https://docs.byteplus.com/en/docs/modelark/seedance-2-0"
+      }
+    },
+    "dreamina-seedance-2-5-260628": {
+      "id": "dreamina-seedance-2-5-260628",
+      "family": "seedance-2.5",
+      "tier": "premium",
+      "preferred_for_pilot": false,
+      "availability": "unverified_account",
+      "enabled_for_submission": false,
+      "supported_durations": null,
+      "supported_resolutions": null,
+      "source": {
+        "type": "user_provided_sample",
+        "name": "seedance-2.5-sample.txt",
+        "official_tutorial": "https://docs.byteplus.com/en/docs/modelark/seedance-2-5"
+      }
+    }
+  }
+}

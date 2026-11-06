@@ -1,0 +1,12 @@
+{
+  "scope": "local_only",
+  "network_checks_executed": false,
+  "paid_calls_executed": false,
+  "python_runtime": {"version": "3.12.14", "usable": true},
+  "python_on_path": {"usable": false, "note": "Alias da Microsoft Store não executável; runtime explícito utilizado"},
+  "gpt_image": {"usable": true, "path": "<local-cli-path>"},
+  "ffmpeg": {"usable": false, "found": false},
+  "ffprobe": {"usable": false, "found": false},
+  "ark_key_presence": {"defined": false},
+  "configuration": {"valid_for_dry_run": true, "model_availability": "unverified_account", "paid_submission": false}
+}

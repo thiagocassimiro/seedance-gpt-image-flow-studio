@@ -1,0 +1,23 @@
+{
+  "network_request_sent": false,
+  "payload": {
+    "model": "dreamina-seedance-2-0-mini-260615",
+    "duration": 5,
+    "resolution": "720p",
+    "ratio": "16:9",
+    "generate_audio": false,
+    "watermark": false,
+    "frame_roles": ["first_frame", "last_frame"]
+  },
+  "frame_validation": {
+    "ok": true,
+    "first": {"width": 1280, "height": 720},
+    "last": {"width": 1280, "height": 720},
+    "source": "PNGs sintéticos locais, sem IA"
+  },
+  "model_availability": "unverified_account",
+  "enabled_for_submission": false,
+  "paid_submissions_enabled": false,
+  "estimate": {"known": false, "total_amount": null},
+  "note": "Resumo público sanitizado; o relatório original local permanece fora do Git."
+}
